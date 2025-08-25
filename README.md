@@ -1,25 +1,25 @@
-# 📥 Telegram Media Downloader
+#  Telegram Media Downloader
 
 A simple Python script to download media (videos, photos, documents, etc.) from Telegram chats and channels using [Telethon](https://github.com/LonamiWebs/Telethon).
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/dmitry1232/telegram-media-downloader.git
 cd telegram-media-downloader
-
+```
 ### 2. Create a virtual environment
 ```bash
 python -m venv .venv
 .\.venv\Scripts\activate 
-
+```
 ### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ### 4. Configure environment
 Create a file named .env in the project root(.env.example):
 
@@ -32,7 +32,7 @@ SAVE_DIR=C:\Users\YourName\Desktop\Vids
 ### 5. Run authentication (first time only)
 ```bash
 python auth_login.py
-
+```
 This will ask for a code from Telegram (and 2FA password if enabled).
 After login, a session.session file will be created so you won’t need to enter codes again.
 
@@ -41,15 +41,15 @@ After login, a session.session file will be created so you won’t need to enter
 #### Download 3 messages from a public channel
 ```bash
 python downloader.py --chat "@channelname" --limit 3
-
+```
 #### Download all videos from a private channel
 ```bash
 python downloader.py --chat "https://t.me/c/2164795256" --types video --save-dir "C:\Users\Vids"
-
+```
 #### Download starting from a specific message
 ```bash
 python downloader.py --chat "https://t.me/c/2164795256/182" --reverse --limit 50
-
+```
 ### Command-line options
 
 --chat → Chat reference (@username, https://t.me/username, or https://t.me/c/<id>/<msg>). Required.
